@@ -70,13 +70,15 @@
   /* ---- hero product carousel (home page only) ---- */
   var slidesWrap = document.getElementById('slides');
   if (slidesWrap) {
+    /* No prices here. They live on smart-locks.html only, so there is one
+       place to change them and nothing on the home page to be held to. */
     var products = [
-      ['S5', 'Homes and apartments', 'KSh 17,999'],
-      ['Sliding door lock', 'Sliding and patio doors', 'KSh 19,000'],
-      ['Aluminium door lock', 'Aluminium frames and offices', 'KSh 19,000'],
-      ['S320', 'Rentals and Airbnbs', 'KSh 19,999'],
-      ['K8 Smart Lock', 'Front doors and hotels', 'KSh 32,000'],
-      ['LM1 Cat Eye', 'Front doors that need eyes', 'KSh 32,100']
+      ['S5', 'Homes and apartments'],
+      ['Sliding door lock', 'Sliding and patio doors'],
+      ['Aluminium door lock', 'Aluminium frames and offices'],
+      ['S320', 'Rentals and Airbnbs'],
+      ['K8 Smart Lock', 'Front doors and hotels'],
+      ['LM1 Cat Eye', 'Front doors that need eyes']
     ];
     var slides = slidesWrap.querySelectorAll('.slide'),
       dotwrap = document.getElementById('pdots'), cur = 0, auto = null;
@@ -94,7 +96,6 @@
       slides[cur].classList.add('on'); dotbtns[cur].classList.add('on');
       document.getElementById('pname').textContent = products[i][0];
       document.getElementById('pfit').textContent = products[i][1];
-      document.getElementById('pamt').textContent = products[i][2];
     }
     function rearm() {
       clearInterval(auto);
